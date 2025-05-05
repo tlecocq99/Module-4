@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator Design</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-container">
+      <section class="box">
+        <input type="text" class="display" readonly />
+        <div class="line-3"></div>
+      </section>
+      <section class="flex-row-cbc">
+        <aside class="frame-1">
+          <button class="clear">C</button>
+        </aside>
+        <aside class="frame">
+          <button class="divide"></button>
+          <div class="line"></div>
+          <button class="x"></button>
+          <div class="line-1"></div>
+          <button class="minus"></button>
+          <div class="line-2"></div>
+          <button class="plus"></button>
+        </aside>
+
+        <section class="frame-3">
+          <div class="flex-row-fa">
+            <div class="line-4"></div>
+            <div class="line-5"></div>
+            <button class="number-7">7</button>
+            <button class="number-8">8</button>
+            <button class="number-9">9</button>
+          </div>
+          <div class="line-6"></div>
+        </section>
+        <section class="line-7">
+          <button class="number-4">4</button>
+          <button class="number-6">6</button>
+          <button class="number-5">5</button>
+        </section>
+        <section class="line-a">
+          <div class="line-d"></div>
+          <button class="number-3">3</button>
+          <button class="number-2">2</button>
+          <button class="number-1">1</button>
+        </section>
+        <section class="line1-3">
+          <div class="line-e"></div>
+          <button class="zero">0<br /></button>
+          <button class="dot">.</button>
+          <button class="equal">=</button>
+        </section>
+      </section>
+    </main>
+    <script src="calculator.js"></script>
+  </body>
+</html>
