@@ -532,7 +532,8 @@ button {
 button:hover {
   opacity: 0.8;
 }
-
+/* Add active effect for buttons */
 button:active {
   transform: scale(0.95);
+  transition: transform 0.1s ease-in-out;
 }
