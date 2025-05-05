@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #e3f2fd;
+      }
+      .card {
+        padding: 10px;
+      }
+      .card-title {
+        font-weight: 600;
+        font-size: 3em;
+        padding: 0 0 10px 0;
+      }
+      .card-description {
+        font-weight: 400;
+        font-size: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <template id="card-template">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-name"></div>
+          <div class="card-age"></div>
+        </div>
+      </div>
+    </template>
+    <template id="portfolio-template">
+      <div class="card-portfolio">
+        <div class="card-title">Portfolio</div>
+        <div class="card-description"></div>
+      </div>
+    </template>
+    <div id="card-list"></div>
+    <div id="card-list-2"></div>
+    <script>
+      function addCard(name, age) {
+        // clone the template
+        const template = document
+          .getElementById("card-template")
+          .content.cloneNode(true);
+        // populate the template
+        template.querySelector(".card-name").innerText = "My name is " + name;
+        template.querySelector(".card-age").innerText =
+          "I am " + age + " years old";
+        // include the populated template into the page
+        document.querySelector("#card-list").appendChild(template);
+      }
+      const data = [
+        { name: "bob", age: 23 },
+        { name: "alice", age: 39 },
+      ];
+      addCard("bob", 23);
+      addCard("alice", 39);
+      addCard("Van Gogh", 40);
+      addCard();
+      addCard();
+      /*the artist’s portfolio:
+Populate the page dynamically, by generating an artist
+profile card which includes cards representing the
+items in an artist's portfolio. Extension: make an array
+of artists, all with multiple portfolio items.*/
+      // Create a function to add portfolio items
+      function addPortfolioItem(name, title, url) {
+        const portfolioItem = document.createElement("div");
+        portfolioItem.className = "portfolio-item";
+        portfolioItem.innerHTML = `<h2>${name}</h2><h3>${title}</h3><img src="${url}" alt="${title}" />`;
+        document.querySelector("#card-list-2").appendChild(portfolioItem);
+      }
+      addPortfolioItem(
+        "Van Gogh",
+        "portrait",
+        "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image"
+      );
+      const artist = {
+        name: "Van Gogh",
+        portfolio: [
+          {
+            title: "portrait",
+            url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image",
+          },
+          {
+            title: "sky",
+            url: "https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg",
+          },
+        ],
+      };
+    </script>
+  </body>
+</html>
