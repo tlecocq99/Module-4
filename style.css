@@ -163,6 +163,7 @@ button {
   z-index: 21;
   font-size: 50px;
   padding-top: 100px;
+  padding-left: 10px;
   color: #ffffff;
   max-width: 100%;
   max-height: 100%;

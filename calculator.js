@@ -55,6 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
       calculate();
     } else if (event.key === "Escape") {
       clear();
+    } else if (event.key === "Backspace") {
+      currentInput = currentInput.slice(0, -1);
+      updateDisplay();
     }
   });
 
