@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <template id="card-template">
+    <div class="card col-8" style="width: 18rem; margin: 10px">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
+  </template>
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <title>Lab 4 - Bootstrap</title>
+  </head>
+
+  <body class="">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container m-0">
+        <a class="navbar-brand" href="#">News</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Local News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">World News</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <!-- News cards  -->
+      <div class="row p-lg-3">
+        <div id="news-list" class="row row-cols-1 row-cols-md-3 g-4"></div>
+      </div>
+      <!--News submission-->
+      <div class="mb-3 p-3">
+        <label for="newsTitle" class="form-label">Update the news!</label>
+        <div class="row-cols-1">
+          <!-- Box for news title -->
+          <div class="col-md-2 pl-3">
+            <textarea
+              id="newsTitle"
+              class="form-control"
+              maxlength="75"
+              placeholder="Title of your news story..."
+              style="resize: none; overflow: hidden"
+            ></textarea>
+          </div>
+          <div class="col-md-8 mt-2">
+            <!-- Box for news content -->
+            <textarea
+              id="newsContent"
+              class="form-control"
+              placeholder="Type the content of your news story here!"
+              style="resize: none; overflow: hidden"
+              maxlength="300"
+            ></textarea>
+          </div>
+          <button
+            id="submit-btn"
+            class="btn btn-primary btn-sm p-2 mt-2 col-md-1"
+          >
+            Submit
+          </button>
+        </div>
+        <small id="helpId" class="form-text text-muted">
+          We are an open source project. Feel free to contribute some
+          interesting news.
+        </small>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
