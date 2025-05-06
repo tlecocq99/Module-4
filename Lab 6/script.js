@@ -39,19 +39,7 @@ if ("content" in document.createElement("template")) {
     addCard2(card);
   });
 }
-let intervalId;
-function startInterval() {
-  intervalId = setInterval(() => {
-    document.querySelector("#news-list").innerHTML = "";
-    cards.forEach((card) => {
-      addCard2(card);
-    });
-  }, 5000);
-}
-startInterval();
-
 const contentInput = document.getElementById("newsContent");
-
 const addCard = () => {
   const title = titleInput.value.trim();
   const content = contentInput.value.trim();
