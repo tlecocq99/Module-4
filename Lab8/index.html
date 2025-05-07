@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 8</title>
+    <!--<link rel="stylesheet" href="style.css" /> -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.6.1/build/global/luxon.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", () => {
+        const DateTime = luxon.DateTime;
+        const Duration = luxon.Duration;
+        const Interval = luxon.Interval;
+        const now = DateTime.now();
+        let eDisplayLuxon = document.getElementById("date-time");
+        eDisplayLuxon.innerHTML = `<p>Unformatted Date: ${now}</p>`;
+        let formatted = now.toFormat("dd-mm-yyyy");
+        eDisplayLuxon.innerHTML += `<p>Formatted Date: ${formatted}</p>`;
+        let lafayette = now.setZone("America/Los_Angeles");
+        eDisplayLuxon.innerHTML += `<p>Lafayette, LA date: ${lafayette.toLocaleString(
+          DateTime.Date_FULL
+        )}</p>`;
+        let birthday = DateTime.fromObject({ year: 1999, month: 2, day: 16 });
+        let age = now.diff(birthday, ["years", "months", "days"]);
+        eDisplayLuxon.innerHTML += `<p>My age is ${age.years} years, ${
+          age.months
+        } months, and ${age.days.toFixed(0)} days</p>`;
+        let date1 = DateTime.fromObject({ year: 2006, month: 10, day: 6 });
+        let date2 = DateTime.fromObject({ year: 2040, month: 5, day: 22 });
+        let dateDiff1 = date1.diff(lafayette, ["years", "months", "days"]);
+        let dateDiff2 = date2.diff(lafayette, ["years", "months", "days"]);
+        let closerDate = dateDiff1 < dateDiff2 ? date1 : date2;
+        eDisplayLuxon.innerHTML += `<p>Between ${date1.toISODate()} and ${date2.toISODate()}, the closest date to today is ${closerDate.toISODate()}</p>`;
+        eDisplayLuxon.innerHTML += `<p>${date1.toISODate()} is before ${date2.toISODate()}.</p>`;
+        let london = DateTime.local().setZone("Europe/London");
+        eDisplayLuxon.innerHTML += `<p>London time is ${london.toLocaleString(
+          DateTime.TIME_24_SIMPLE
+        )}h</p>`;
+      });
+    </script>
+  </head>
+  <body>
+    <h2>Date and Time</h2>
+    <div id="date-time">
+      <div id="date"></div>
+      <div id="time"></div>
+    </div>
+  </body>
+</html>
