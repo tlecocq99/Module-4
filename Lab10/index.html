@@ -10,13 +10,15 @@
       flex-direction: column;
     }
     img {
+      size: ;
       max-width: 100%;
       height: auto;
+      object-fit: cover;
     }
   </style>
   <template id="card-template">
     <div class="col-lg-3 col-md-6 col-sm-12 mt-4 mb-4">
-      <div class="card" style="width: 24rem; margin: auto">
+      <div class="card" style="width: 20rem; margin: auto">
         <img id="image" class="card-img-top" alt="Product Image" />
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -53,11 +55,10 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <nav class="navbar navbar-light bg-light">
-      <div class="container m-0">
-        <a class="navbar-brand" href="#">RikRok Shop</a>
+    <nav class="navbar navbar-light py-3" style="background-color: #d3d3d4">
+      <div class="container m-0 d-flex align-items-center">
         <button
-          class="navbar-toggler"
+          class="navbar-toggler ms-3 me-auto"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -67,8 +68,27 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="navbar-brand mx-auto" href="#">RikRok Shop</a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="categoryDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categories
+              </a>
+              <ul
+                class="dropdown-menu"
+                id="category-buttons"
+                aria-labelledby="categoryDropdown"
+              ></ul>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
@@ -86,9 +106,6 @@
       <!-- News cards  -->
       <div id="products-list" class="row d-flex align-items-stretch"></div>
       <!--News submission-->
-      <div class="">
-        <div class=""></div>
-      </div>
     </main>
     <script src="script.js" defer></script>
   </body>
