@@ -1,0 +1,27 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: slideAndChange 4s infinite;
+}
+
+@keyframes slideAndChange {
+  49% {
+    background-color: blue;
+  }
+  50% {
+    transform: translate(-50%, 50%);
+    background-color: blue;
+  }
+  51% {
+    background-color: red;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    background-color: red;
+  }
+}
